@@ -3,7 +3,8 @@
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "features": {
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
   "forwardPorts": [3000],
   "portsAttributes": {
@@ -12,15 +13,34 @@
       "onAutoForward": "openBrowser"
     }
   },
-  "postCreateCommand": "npm install",
-  "postStartCommand": "npm run dev",
+  "postCreateCommand": "npm install && npm run build",
+  "postStartCommand": "npm run dev:ultra-fast",
+  "mounts": [
+    "source=${localWorkspaceFolder}/node_modules,target=/workspaces/${localWorkspaceFolderBasename}/node_modules,type=volume",
+    "source=${localWorkspaceFolder}/.next,target=/workspaces/${localWorkspaceFolderBasename}/.next,type=volume"
+  ],
+  "containerEnv": {
+    "NEXT_TELEMETRY_DISABLED": "1",
+    "WATCHPACK_POLLING": "true",
+    "CHOKIDAR_USEPOLLING": "true"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
         "bradlc.vscode-tailwindcss",
         "esbenp.prettier-vscode",
-        "ms-vscode.vscode-typescript-next"
-      ]
+        "ms-vscode.vscode-typescript-next",
+        "ms-vscode.vscode-eslint",
+        "formulahendry.auto-rename-tag"
+      ],
+      "settings": {
+        "typescript.preferences.includePackageJsonAutoImports": "off",
+        "typescript.suggest.autoImports": false,
+        "files.watcherExclude": {
+          "**/node_modules/**": true,
+          "**/.next/**": true
+        }
+      }
     }
   }
 }

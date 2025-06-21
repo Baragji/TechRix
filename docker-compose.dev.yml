@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  nextjs-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    container_name: techflow-dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - NEXT_TELEMETRY_DISABLED=1
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    command: npm run dev:ultra-fast
+    restart: unless-stopped
+    stdin_open: true
+    tty: true

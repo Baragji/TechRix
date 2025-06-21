@@ -9,11 +9,18 @@ const nextConfig: NextConfig = {
   ...(process.env.NODE_ENV === 'development' && {
     // Disable caching in development
     onDemandEntries: {
-      maxInactiveAge: 1000 * 60 * 60, // 1 hour
-      pagesBufferLength: 2,
+      maxInactiveAge: 1000 * 60 * 15, // 15 minutes (reduced from 1 hour)
+      pagesBufferLength: 8, // Increased buffer for more pages in memory
     },
     // Enable Fast Refresh
     reactStrictMode: true,
+    // Disable source maps in dev for speed
+    webpack: (config, { dev, isServer }) => {
+      if (dev && !isServer) {
+        config.devtool = false;
+      }
+      return config;
+    },
   }),
 
   // Image optimization

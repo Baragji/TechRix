@@ -175,7 +175,7 @@ const Navigation: React.FC<NavigationProps> = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 glass-hero rounded-2xl overflow-hidden"
+                    className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-80 glass-dropdown rounded-2xl overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                   >
                     <div className="p-4">
@@ -189,7 +189,7 @@ const Navigation: React.FC<NavigationProps> = () => {
                           >
                             <Link
                               href={item.href}
-                              className="flex items-center p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group"
+                              className="flex items-center p-3 rounded-xl hover:bg-gray-50 transition-all duration-300 group"
                               onClick={() => setActiveDropdown(null)}
                             >
                               <div className="shrink-0 w-10 h-10 bg-accent-blue/10 rounded-lg flex items-center justify-center group-hover:bg-accent-blue/20 transition-colors duration-300">
@@ -199,10 +199,10 @@ const Navigation: React.FC<NavigationProps> = () => {
                                 />
                               </div>
                               <div className="ml-3">
-                                <div className="text-sm font-medium text-white group-hover:text-accent-blue transition-colors duration-300">
+                                <div className="text-sm font-medium text-gray-900 group-hover:text-accent-blue transition-colors duration-300">
                                   {item.label}
                                 </div>
-                                <div className="text-sm text-white/70 mt-1">{item.description}</div>
+                                <div className="text-sm text-gray-600 mt-1">{item.description}</div>
                               </div>
                             </Link>
                           </motion.div>

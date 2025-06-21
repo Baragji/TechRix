@@ -1,0 +1,26 @@
+FROM node:20-alpine
+
+# Install dependencies for file watching
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm ci --legacy-peer-deps
+
+# Copy source code
+COPY . .
+
+# Set environment variables for optimal development
+ENV NODE_ENV=development
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV WATCHPACK_POLLING=true
+ENV CHOKIDAR_USEPOLLING=true
+
+EXPOSE 3000
+
+# Use the ultra-fast development command
+CMD ["npm", "run", "dev:ultra-fast"]

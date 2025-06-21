@@ -1,20 +1,13 @@
 {
     "zencoder.enableRepoIndexing": true,
     "zencoder.mcpServers": {
-        "sequential thinking": {
-            "command": "npx",
-            "args": [
-                "-y",
-                "@modelcontextprotocol/server-sequential-thinking"
-            ]
-        },
-        "puppeteer": {
-            "command": "npx",
-            "args": [
-                "-y",
-                "@modelcontextprotocol/server-puppeteer"
-            ]
-        }
+      "sequential thinking": {
+        "command": "npx",
+        "args": [
+          "-y",
+          "@modelcontextprotocol/server-sequential-thinking"
+        ]
+      }
     },
     "files.saveConflictResolution": "overwriteFileOnDisk",
     "editor.formatOnSave": true,
