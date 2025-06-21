@@ -1,9 +1,9 @@
-# TechFlow Solutions - Next.js Website
+# TechRix - Modern Web Development Agency
 
 
-''''''[![CI/CD Pipeline](https://github.com/Baragji/TechFlows/actions/workflows/ci.yml/badge.svg)](https://github.com/Baragji/TechFlows/actions/workflows/ci.yml)
-[![CodeQL Security Analysis](https://github.com/Baragji/TechFlows/actions/workflows/codeql.yml/badge.svg)](https://github.com/Baragji/TechFlows/actions/workflows/codeql.yml)
-[![Security Scanning](https://github.com/Baragji/TechFlows/actions/workflows/security.yml/badge.svg)](https://github.com/Baragji/TechFlows/actions/workflows/security.yml)
+''''''[![CI/CD Pipeline](https://github.com/Baragji/TechRix/actions/workflows/ci.yml/badge.svg)](https://github.com/Baragji/TechRix/actions/workflows/ci.yml)
+[![CodeQL Security Analysis](https://github.com/Baragji/TechRix/actions/workflows/codeql.yml/badge.svg)](https://github.com/Baragji/TechRix/actions/workflows/codeql.yml)
+[![Security Scanning](https://github.com/Baragji/TechRix/actions/workflows/security.yml/badge.svg)](https://github.com/Baragji/TechRix/actions/workflows/security.yml)
 
 Modern technology company website built with Next.js, featuring automated security scanning and continuous integration.
 
@@ -14,7 +14,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 This project includes comprehensive automated security scanning:
 
 - **CodeQL Analysis**: Advanced security vulnerability detection
-- **Dependency Scanning**: Automated vulnerability checks for all dependencies  
+- **Dependency Scanning**: Automated vulnerability checks for all dependencies
 - **Code Quality**: ESLint, TypeScript, and circular dependency checks
 - **Multi-tool Security**: Semgrep, Snyk, and OSSAR integration
 - **Continuous Monitoring**: Daily security scans and weekly deep analysis
