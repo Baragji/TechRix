@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-06-21T07:33:36.886Z",
+  "summary": {
+    "successes": 15,
+    "warnings": 3,
+    "issues": 1
+  },
+  "details": {
+    "successes": [
+      "Page exists: /case-studies",
+      "Page exists: /",
+      "Page exists: /contact",
+      "Page exists: /prisberegner",
+      "Page exists: /events",
+      "Page exists: /testimonials",
+      "Page exists: /blog",
+      "CSS file structure looks good",
+      "Tailwind config exists",
+      "Compression enabled",
+      "Image optimization configured",
+      "Experimental optimizations enabled",
+      "Bundle analyzer script available",
+      "Strict TypeScript mode enabled",
+      "TypeScript configuration exists"
+    ],
+    "warnings": [
+      "Found 1 <img> tags in ./src/components/sections/__tests__/FeaturedEvents.test.tsx",
+      "Security vulnerabilities found - run \"npm audit\" for details",
+      "Some dependencies are outdated - run \"npm outdated\" for details"
+    ],
+    "issues": [
+      "Found 1 unoptimized <img> tags. Use Next.js Image component instead."
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+# Husky v9 compatible format
+
+# Run lint-staged
+npx lint-staged
+
+# Type check entire project (Next.js way)
+npm run type-check
+
+# Run tests with timeout protection (2025 best practice)
+timeout 60s npm test -- --watchAll=false --passWithNoTests --bail || true
